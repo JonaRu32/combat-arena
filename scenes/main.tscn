@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cm7secu3fbuc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5aty5"]
+size = Vector2(640, 60)
+
+[sub_resource type="Gradient" id="Gradient_sgp6g"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5aty5"]
+gradient = SubResource("Gradient_sgp6g")
+width = 640
+height = 60
+fill_from = Vector2(0, 1)
+fill_to = Vector2(1, 1)
+
+[node name="Main" type="Node2D" unique_id=47987934]
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=1661088363]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0.09019608, 0.09803922, 0.12156863, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=957132884]
+position = Vector2(320, 180)
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1679173408]
+position = Vector2(320, 310)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=808451231]
+shape = SubResource("RectangleShape2D_5aty5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo" unique_id=2056982475]
+modulate = Color(0.28118682, 0.28118688, 0.28118682, 1)
+texture = SubResource("GradientTexture2D_5aty5")
